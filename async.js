@@ -24,7 +24,7 @@ const getDatos = () =>{
 	return datos;
 }
 */
-
+/*
 const getDatos  = () => {
 	return new Promise ((resolve, reject) =>{ // Retorna un objeto promesa
 		if(datos.length === 0 ){
@@ -35,6 +35,14 @@ const getDatos  = () => {
 		},1500)
 	})	
 }
+*/
+const fetchingData = async () => {
+	const data = fetch('https://pokeapi.co/api/v2/pokemon/lugia')
+	.then(response => response.json())
+	.then(data => console.log(data))
+}
+
+fetchingData()
 
 /*
 getDatos()
@@ -54,10 +62,11 @@ asyncFunction()//Llamar funcion
 */
 
 /* #### Script del trabajo #### */
-
+/*
 asyncFunc(this.id,row,tr).then((datos) => {//Obtenemos los datos con then
 	buildTable(datos, row, tr);
 })
+*/
 
 /*const getFunc = async() => { //24/01/2023
 	try{
