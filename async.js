@@ -1,6 +1,3 @@
-const { get } = require("https");
-const { resolve } = require("path");
-
 const datos = [
 	{
 		"id" : 1,
@@ -36,13 +33,23 @@ const getDatos  = () => {
 	})	
 }
 */
-const fetchingData = async () => {
-	const data = fetch('https://pokeapi.co/api/v2/pokemon/lugia')
-	.then(response => response.json())
-	.then(data => console.log(data))
+function fetchingData (){
+	try{
+		const data = fetch("https://pokeapi.co/api/v2/pokemon/lugia")		
+		.then(response => response.json()) //Primero procesar la respuesta		
+		.then(data => data)//Procesar los datos
+			/*Procesar los datos aqui si se requiere con arrow function*/
+		return data		
+		 //Retornar la data y obtenerlo con promesas (.then)
+	}catch(err){
+		console.log("Aviso importante:  Error" + err)
+	}
 }
+fetchingData().then(data => { 
+	console.log(data)
+})
 
-fetchingData()
+//fetchingData().then(data => console.log(data));//Solo retornar la data y obtenerlo con promesas (.then)
 
 /*
 getDatos()
