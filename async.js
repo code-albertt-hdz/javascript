@@ -1,6 +1,3 @@
-const { get } = require("https");
-const { resolve } = require("path");
-
 const datos = [
 	{
 		"id" : 1,
@@ -24,7 +21,7 @@ const getDatos = () =>{
 	return datos;
 }
 */
-
+/*
 const getDatos  = () => {
 	return new Promise ((resolve, reject) =>{ // Retorna un objeto promesa
 		if(datos.length === 0 ){
@@ -35,7 +32,7 @@ const getDatos  = () => {
 		},1500)
 	})	
 }
-
+*/
 /*
 getDatos()
 	.then((datos) => console.log(datos))//Obteniendo datos
@@ -54,10 +51,11 @@ asyncFunction()//Llamar funcion
 */
 
 /* #### Script del trabajo #### */
-
+/*
 asyncFunc(this.id,row,tr).then((datos) => {//Obtenemos los datos con then
 	buildTable(datos, row, tr);
 })
+*/
 
 /*const getFunc = async() => { //24/01/2023
 	try{
@@ -69,7 +67,7 @@ asyncFunc(this.id,row,tr).then((datos) => {//Obtenemos los datos con then
 	}
 }*/
 //getFunc()//Llamamos la función   
-
+/*
 const asyncFunc = (v) => {
 	return new Promise((resolve, reject) => {//Retorna un objeto de promesa
 		axios.post('/PedidosEntregadosController/getCe','id='+v)
@@ -82,4 +80,18 @@ const asyncFunc = (v) => {
 		})
 	})
 }  
+*/
 /*Esto debe de aparecer en la rama de producción */
+/* Api de GIPHY (pandas)*/
+
+const functionAsync =  () => {
+	const datos = fetch('https://api.giphy.com/v1/gifs/search?api_key=65jYvAiiC8Uqcj5Y8OOd3392DpbHW9L5&q=panda&limit=25&offset=0&rating=g&lang=en')	
+	.then(res => res.json())//Procesar la respuesta 
+	//.then(data => data)//Si se descomenta retornar el fetch sin declara la constante => return fetch...
+	return datos
+}
+console.log(functionAsync())//Solo retorna una promesa 
+functionAsync().then((datos1)=>{console.log(datos1)})
+//functionAsync().then((gifs)=>{console.log(gifs)})
+
+
