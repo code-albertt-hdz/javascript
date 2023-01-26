@@ -46,9 +46,14 @@ function fetchingData (){
 	}
 }
 fetchingData().then(data => { 
-	console.log(data)
+	recorrerDatos(data.game_indices)
 })
 
+function recorrerDatos(data){
+	data.forEach(dato => dato +
+		console.log(dato)
+	)
+}
 //fetchingData().then(data => console.log(data));//Solo retornar la data y obtenerlo con promesas (.then)
 
 /*
