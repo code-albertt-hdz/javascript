@@ -91,7 +91,7 @@ const functionAsync =  () => {
 	return datos
 }
 console.log(functionAsync())//Solo retorna una promesa 
-functionAsync().then((datos1)=>{console.log(datos1)})
+functionAsync().then((gifs)=>{console.log(gifs)})
 //functionAsync().then((gifs)=>{console.log(gifs)})
 
 
